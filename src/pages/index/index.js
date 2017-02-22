@@ -10,9 +10,7 @@ import routeConfig from './router.js';
 import FastClick from 'fastclick';
 import App from './app.vue';
 //common Component
-import imgHolder from './widget/imgHolder.vue';
 import cHeader from './widget/cHeader.vue';
-Vue.component('c-imgHolder',imgHolder);
 Vue.component('c-cHeader',cHeader);
 
 Vue.use(VueRouter);

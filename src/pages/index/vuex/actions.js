@@ -1,6 +1,6 @@
 //index-nav
 export const get_index_nav = ({ commit }) => {
-    let index_nav = require('../mock/index-nav')
+    let index_nav = {}
     commit('SET_MENU', index_nav)
 }
 export const set_menu_active = ({ commit }, _index) => {
@@ -20,7 +20,7 @@ export const delete_news = ({ commit }, index, fn) => {
     !!fn && fn()
 }
 export const get_menu_wechat_list = ({ commit }, fn) => {
-    let list = require('../mock/chat')
+    let list = {}
     commit('SET_MENU_WECHAT_LIST', list)
     !!fn && fn()
 }
@@ -30,12 +30,12 @@ export const set_chat = ({ commit }, model) => {
 
 //contact
 export const get_person_info = ({ commit }, id, fn) => {
-    let info = require('../mock/person-info-' + id)
+    let info = {}
     commit('PERSON_INFO', info)
     return Promise.resolve();
 }
 export const get_friends_list = ({ commit }, id) => {
-    let friends = require('../mock/contact')
+    let friends = {}
     commit('CONTACT_FRIENDS', friends)
 }
 

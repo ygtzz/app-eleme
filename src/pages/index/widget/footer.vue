@@ -1,18 +1,18 @@
 <template>
     <div class="footer">
-        <router-link :to="{name:'weixin'}">
-            <i class="iconfont icon-wechat"><span class="count">12</span></i>
+        <router-link :to="{name:'shopping'}">
+            <i class="iconfont icon-wechat"></i>
             <p>微信</p>
         </router-link>
-        <router-link :to="{name:'contact'}">
+        <router-link :to="{name:'shopping'}">
             <i class="iconfont icon-contact"></i>
             <p>通讯录</p>
         </router-link>
-        <router-link :to="{name:'find'}">
-            <i class="iconfont icon-find"><span class="dot">&nbsp;</span></i>
+        <router-link :to="{name:'shopping'}">
+            <i class="iconfont icon-find"></i>
             <p>发现</p>
         </router-link>
-        <router-link :to="{name:'me'}">
+        <router-link :to="{name:'shopping'}">
             <i class="iconfont icon-me"></i>
             <p>我</p>
         </router-link>

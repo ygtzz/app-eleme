@@ -5,9 +5,10 @@
 </template>
 <script>
 import {mapGetters,mapActions} from "vuex";
+import {fmtDate} from 'widget/filter/datetime';
 
 export default {
-    name:'c-weixin',
+    name:'c-shopping',
     created() {
         
     },
@@ -23,7 +24,6 @@ export default {
         
     },
     components:{
-        '
     },
     filters:{
         fmtDate:fmtDate

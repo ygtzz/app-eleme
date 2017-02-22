@@ -1,4 +1,4 @@
-import weixin from './views/shopping.vue';
+import shopping from './views/shopping.vue';
 
 export default [
     { path: '/', component: shopping },
