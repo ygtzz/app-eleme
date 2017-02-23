@@ -35,10 +35,10 @@ import footer from './widget/footer.vue';
 export default {
     created(){
         var self = this;
-        setTimeout(function(){
-            self.bShowWelcome = false;
-        },2000);
-        this.bPc = !this.fIsMobile();
+        // setTimeout(function(){
+        //     self.bShowWelcome = false;
+        // },2000);
+        // this.bPc = !this.fIsMobile();
     },
     data(){
         return {
