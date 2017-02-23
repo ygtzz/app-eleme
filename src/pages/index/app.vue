@@ -2,7 +2,6 @@
     <div id="app">
         <div class="container">
             <header class="top-fixed">
-                <c-header></c-header>  
             </header>
             <section class="body">
                 <router-view></router-view>
@@ -43,7 +42,7 @@ export default {
     },
     data(){
         return {
-            bShowWelcome:true,
+            bShowWelcome:false,
             bPc:false
         }
     },
@@ -72,7 +71,6 @@ export default {
         overflow:hidden;
         display:flex;
         flex-direction:column;
-        background-color:#F1F0F6;
     }
     .top-fixed{
         

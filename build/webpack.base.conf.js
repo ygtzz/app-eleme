@@ -24,7 +24,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.(js|jsx|es)$/, loader: "babel", exclude: /node_modules/},
+            {test: /\.(js|jsx)$/, loader: "babel", exclude: /node_modules/},
             {test: /\.css$/, loader: 'style!css?importLoaders=1!postcss'},
             {test: /\.scss$/, loader:'style!css?importLoaders=2!postcss!sass'},
             {test: /\.(html)$/, loader: 'html'},
@@ -59,7 +59,7 @@ module.exports = {
     },
     resolve:{
         modulesDirectories: [ "node_modules",sBase,sBase+"pages", sBase+"widget",sBase+'mock'],
-        extensions:['','.jsx','.js','.json','.es'],
+        extensions:['','.jsx','.js','.json'],
         alias: {
             'vue': 'vue/dist/vue.js'
         }
