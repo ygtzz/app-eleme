@@ -26,7 +26,7 @@
                 <img :src="seller.avatar" alt="bg">
             </div>
         </div>
-        <transition name="fade-in">
+        <transition name="fade">
             <div class="stage detail f12" v-show="bShowDetail">
                 <h3 class="name tc f16">{{seller.name}}</h3>
                 <div class="star-wrap">

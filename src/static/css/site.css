@@ -31,6 +31,13 @@ ul,li,p{margin:0;padding:0}
     transform: translate3d(100%,0,0);
     opacity: .98;
 }
+/*fade*/
+.fade-enter-active,.fade-leave-active{
+    transition: opacity .3s ease;
+}
+.fade-enter,.fade-leave-active{
+    opacity:0
+}
 /*ele rewrite*/
 .mint-switch-input:checked + .mint-switch-core {
     border-color: #04be02 !important;
