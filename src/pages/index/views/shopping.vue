@@ -36,12 +36,13 @@
     .banner{width:100%;position:relative;display:flex;padding:24px 12px 18px 24px;box-sizing:border-box;}
     .img{img{width:64px;height:64px;margin-right:16px;vertical-align:middle;}}
     .info{flex:1;font-size:dpr(12px);line-height:1;}
-    .delivery,.discount{margin-top:8px}
+    .delivery{margin-top:8px}
+    .discount{margin-top:10px}
     .brand{width: 30px;height: 18px;background-image:url(./header/brand@2x.png);
         background-size: cover;vertical-align: bottom;display: inline-block;margin-right:6px;}
     .discount{& *{vertical-align:middle}}
     .decrease{background-image:url(./header/decrease_1@2x.png);width:12px;height:12px;display:inline-block;}
-    .title{font-size:dpr(16px);line-height:1.4;& *{vertical-align:middle}}
+    .title{font-size:dpr(16px);& *{vertical-align:middle}}
     .other{display:flex;align-items:flex-end;}
     .count{padding:0 8px;border-radius:15px;background:rgba(0,0,0,0.2);}
     .bulletin{display:flex;align-items:center;padding:0 22px 0 12px;box-sizing:border-box;background:rgba(7,17,27,0.2);line-height:2;height:28px;}
