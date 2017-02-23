@@ -6,7 +6,7 @@
                     <img src="//static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg" alt="shop">
                 </div>
                 <div class="info">
-                    <p class="title"><span class="brand"></span>粥品香坊（回龙观）</p>
+                    <p class="title"><span class="brand"></span><span>粥品香坊（回龙观）</span></p>
                     <p class="delivery">蜂鸟专送/38分钟送达</p>
                     <p class="discount"><span class="decrease mr5"></span><span>在线支付满28减5</span></p>
                 </div>
@@ -23,6 +23,12 @@
                 <img src="//static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg" alt="bg">
             </div>
         </header>
+        <section>
+
+        </section>
+        <footer>
+
+        </footer>
     </div>
 </template>
 <style lang="sass" scoped>
@@ -32,10 +38,10 @@
     .info{flex:1;font-size:dpr(12px);line-height:1;}
     .delivery,.discount{margin-top:8px}
     .brand{width: 30px;height: 18px;background-image:url(./header/brand@2x.png);
-        background-size: cover;vertical-align: bottom;display: inline-block;margin-right: 10px;}
+        background-size: cover;vertical-align: bottom;display: inline-block;margin-right:6px;}
     .discount{& *{vertical-align:middle}}
     .decrease{background-image:url(./header/decrease_1@2x.png);width:12px;height:12px;display:inline-block;}
-    .title{font-size:dpr(16px);line-height:1.4}
+    .title{font-size:dpr(16px);line-height:1.4;& *{vertical-align:middle}}
     .other{display:flex;align-items:flex-end;}
     .count{padding:0 8px;border-radius:15px;background:rgba(0,0,0,0.2);}
     .bulletin{display:flex;align-items:center;padding:0 22px 0 12px;box-sizing:border-box;background:rgba(7,17,27,0.2);line-height:2;height:28px;}
