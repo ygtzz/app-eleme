@@ -111,7 +111,7 @@ export default {
     },
     data(){
         return {
-            bShowDetail:true,
+            bShowDetail:false,
             classMap:['decrease', 'discount', 'special', 'invoice', 'guarantee']
         }
     },
