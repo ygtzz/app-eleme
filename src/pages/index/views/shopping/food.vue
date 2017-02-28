@@ -23,9 +23,7 @@
         padding:15px;
         &:not(:last-child) .inner{border-bottom:1px solid #f3f3f4;}
     }
-    .inner{display:flex;padding-bottom:20px;height:100%;
-        
-    }
+    .inner{display:flex;padding-bottom:20px;height:100%;}
     .img{
         img{width:57px;height:57px;}
     }
@@ -34,7 +32,7 @@
     .sale{color:#93999F}
     .price{color:#F34949}
     .other{display:flex;flex-direction:column;justify-content:flex-end}
-    .add{background:#00A0DC;color:#fff;border-radius:50%;width:20px;height:20px;line-height:1;text-align:center;padding-top:1px;}
+    .add{background:#00A0DC;color:#fff;border-radius:50%;width:20px;height:20px;line-height:1;text-align:center;}
 </style>
 <script>
 import data from 'index/mock/data';
