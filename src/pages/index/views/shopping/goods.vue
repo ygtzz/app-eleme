@@ -1,15 +1,15 @@
 <template>
     <div class="c">
-        <div class="left">
-            <ul class="menu">
+        <div class="left" ref="leftWrapper">
+            <ul class="menu" >
                 <li @click="fMenuItemClick(item)" :class="{'active':activeMenuName==item.name}" class="item f12" v-for="(item,index) in goods">{{item.name}}</li>
             </ul>
         </div>
-        <div class="right">
+        <div class="right" ref="rightWrapper">
             <ul>
                 <li v-for="item in goods">
                     <div class="title f12"> {{item.name}}</div>
-                    <c-foods :foods="item.foods"></c-foods>
+                    <c-food :foods="item.foods"></c-food>
                 </li>
             </ul>
         </div>
@@ -25,13 +25,17 @@
     .title{color:#93999f;line-height:2.1;background:#F3F5F7;padding-left:14px;border-left:2px solid #D9DDE1;}
 </style>
 <script>
+import BScroll from 'better-scroll';
 import data from 'index/mock/data';
-import foods from './foods.vue';
+import food from './food.vue';
 
 export default {
     name:'c-goods',
     created(){
         this.goods = data.goods;
+        this.$nextTick(() => {
+            this.fInitScroll();
+        });
     },
     props:{
         seller:{
@@ -48,10 +52,20 @@ export default {
     methods:{
         fMenuItemClick(item){
             this.activeMenuName = item.name;
+        },
+        fInitScroll(){
+            this.leftScroll = new BScroll(this.$refs.leftWrapper,{
+                click:true
+            });
+            this.rightScroll = new BScroll(this.$refs.rightWrapper,{
+                click:true,
+                probeType: 3
+            });
+
         }
     },
     components:{
-        'c-foods':foods
+        'c-food':food
     }
 }
 </script>

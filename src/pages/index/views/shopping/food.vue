@@ -40,7 +40,7 @@
 import data from 'index/mock/data';
 
 export default {
-    name:'c-foods',
+    name:'c-food',
     props:{
         foods:{
             type:Array,
