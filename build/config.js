@@ -47,6 +47,7 @@ module.exports = {
         threeVersion:false,
         remVersion:true,
         baseDpr:1,
-        remPrecision:6
+        remPrecision:6,
+        aDpr:[2,3]
     }
 }

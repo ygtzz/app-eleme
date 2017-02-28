@@ -33,7 +33,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url',
                 query: {
-                    limit: 10000,
+                    limit: 1,
                     name: '/static/images/[name].[ext]'
                 }
             },
@@ -41,7 +41,7 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url',
                 query: {
-                    limit: 10000,
+                    limit: 1,
                     name:'/static/fonts/[name].[ext]'
                 }
             }
