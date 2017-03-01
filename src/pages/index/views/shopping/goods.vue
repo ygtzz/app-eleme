@@ -47,6 +47,7 @@ export default {
         return{
             goods:[],
             activeMenuName:'',
+            scrollY: 0
         }
     },
     methods:{
@@ -61,7 +62,9 @@ export default {
                 click:true,
                 probeType: 3
             });
-
+            this.rightScroll.on('scroll',(pos) => {
+                this.scrollY = Math.abs(Math.round(pos.y));
+            });
         }
     },
     components:{
