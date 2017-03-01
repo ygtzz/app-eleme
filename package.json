@@ -59,7 +59,7 @@
     "gulp-load-plugins": "^1.4.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.0",
-    "node-sass": "^3.10.1",
+    "node-sass": "^4.5.0",
     "open-browser-webpack-plugin": "0.0.2",
     "opn": "^4.0.2",
     "ora": "^0.3.0",

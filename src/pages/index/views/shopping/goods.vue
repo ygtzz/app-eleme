@@ -33,7 +33,11 @@ export default {
     name:'c-goods',
     created(){
         this.goods = data.goods;
+        
+    },
+    mounted(){
         this.$nextTick(() => {
+            console.log('lalala')
             this.fInitScroll();
         });
     },
@@ -48,6 +52,8 @@ export default {
             goods:[],
             activeMenuName:'',
             scrollY: 0
+            leftScroll:'',
+            rightScroll:''
         }
     },
     methods:{
@@ -65,6 +71,7 @@ export default {
             this.rightScroll.on('scroll',(pos) => {
                 this.scrollY = Math.abs(Math.round(pos.y));
             });
+            //this.rightScroll.scrollTo(0, 1500)
         }
     },
     components:{

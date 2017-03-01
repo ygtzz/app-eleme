@@ -7,7 +7,7 @@ import 'static/css/quick-layout.css';
 import 'static/css/font-awesome.min.css';
 import 'static/css/site.css';
 import routeConfig from './router.js';
-import FastClick from 'fastclick';
+//import FastClick from 'fastclick';
 import App from './app.vue';
 //common Component
 import cHeader from './widget/cHeader.vue';
@@ -15,9 +15,9 @@ Vue.component('c-cHeader',cHeader);
 
 Vue.use(VueRouter);
 
-window.addEventListener('load', () => {
-  FastClick.attach(document.body)
-});
+// window.addEventListener('load', () => {
+//   FastClick.attach(document.body)
+// });
 
 const router = new VueRouter({
     mode:'hash',
