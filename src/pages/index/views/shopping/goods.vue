@@ -16,18 +16,21 @@
     </div>
 </template>
 <style lang="sass" scoped>
-    .c{display:flex;}
+    .c{display:flex;height:100%;}
     .left{width:80px;}
-    .right{flex:1;}
+    .right{flex:1;
+        height:100%;
+        overflow:auto;
+    }
     .item{padding:15px;background-color:#F3F5F7;
         &.active{background-color:#fff}
     }
     .title{color:#93999f;line-height:2.1;background:#F3F5F7;padding-left:14px;border-left:2px solid #D9DDE1;}
 </style>
 <script>
-import BScroll from 'better-scroll';
 import data from 'index/mock/data';
 import food from './food.vue';
+import {infiniteScroll} from 'mint-ui';
 
 export default {
     name:'c-goods',
@@ -37,7 +40,6 @@ export default {
     },
     mounted(){
         this.$nextTick(() => {
-            console.log('lalala')
             this.fInitScroll();
         });
     },
@@ -51,7 +53,7 @@ export default {
         return{
             goods:[],
             activeMenuName:'',
-            scrollY: 0
+            scrollY: 0,
             leftScroll:'',
             rightScroll:''
         }
@@ -61,17 +63,7 @@ export default {
             this.activeMenuName = item.name;
         },
         fInitScroll(){
-            this.leftScroll = new BScroll(this.$refs.leftWrapper,{
-                click:true
-            });
-            this.rightScroll = new BScroll(this.$refs.rightWrapper,{
-                click:true,
-                probeType: 3
-            });
-            this.rightScroll.on('scroll',(pos) => {
-                this.scrollY = Math.abs(Math.round(pos.y));
-            });
-            //this.rightScroll.scrollTo(0, 1500)
+
         }
     },
     components:{
