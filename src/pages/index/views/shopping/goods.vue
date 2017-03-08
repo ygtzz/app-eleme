@@ -1,11 +1,11 @@
 <template>
     <div class="c">
-        <div class="left" ref="leftWrapper">
+        <div class="left" ref="menuWrapper">
             <ul class="menu" >
                 <li @click="fMenuItemClick(item)" :class="{'active':activeMenuName==item.name}" class="item f12" v-for="(item,index) in goods">{{item.name}}</li>
             </ul>
         </div>
-        <div class="right" ref="rightWrapper">
+        <div class="right" ref="foodsWrapper">
             <ul>
                 <li v-for="item in goods">
                     <div class="title f12"> {{item.name}}</div>
@@ -20,7 +20,7 @@
     .left{width:80px;}
     .right{flex:1;
         height:100%;
-        overflow:auto;
+        overflow-y:auto;
     }
     .item{padding:15px;background-color:#F3F5F7;
         &.active{background-color:#fff}
@@ -30,7 +30,7 @@
 <script>
 import data from 'index/mock/data';
 import food from './food.vue';
-import {infiniteScroll} from 'mint-ui';
+import BScroll from 'better-scroll';
 
 export default {
     name:'c-goods',
@@ -54,8 +54,8 @@ export default {
             goods:[],
             activeMenuName:'',
             scrollY: 0,
-            leftScroll:'',
-            rightScroll:''
+            menuScroll:'',
+            foodsScroll:''
         }
     },
     methods:{
@@ -63,7 +63,16 @@ export default {
             this.activeMenuName = item.name;
         },
         fInitScroll(){
-
+            //  this.meunScroll = new BScroll(this.$refs.menuWrapper, {
+            //     click: true
+            // });
+            // this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
+            //     click: true,
+            //     probeType: 3
+            // });
+            // this.foodsScroll.on('scroll', (pos) => {
+            //     this.scrollY = Math.abs(Math.round(pos.y));
+            // });
         }
     },
     components:{
