@@ -20,7 +20,8 @@
 </template>
 <style lang="sass" scoped>
     .item{
-        padding:15px;padding-bottom:22px;
+        padding:15px;
+        &:last-child{padding-bottom:22px;}
         &:not(:last-child) .inner{border-bottom:1px solid #f3f3f4;}
     }
     .inner{display:flex;padding-bottom:20px;height:100%;}

@@ -20,7 +20,7 @@
     .left{width:80px;}
     .right{flex:1;
         height:100%;
-        overflow-y:auto;
+        overflow-y:hidden;
     }
     .item{padding:15px;background-color:#F3F5F7;
         &.active{background-color:#fff}
@@ -63,16 +63,15 @@ export default {
             this.activeMenuName = item.name;
         },
         fInitScroll(){
-            //  this.meunScroll = new BScroll(this.$refs.menuWrapper, {
-            //     click: true
-            // });
-            // this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
-            //     click: true,
-            //     probeType: 3
-            // });
-            // this.foodsScroll.on('scroll', (pos) => {
-            //     this.scrollY = Math.abs(Math.round(pos.y));
-            // });
+             this.meunScroll = new BScroll(this.$refs.menuWrapper, {
+                click: true
+            });
+            this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
+                click: true
+            });
+            this.foodsScroll.on('scroll', (pos) => {
+                this.scrollY = Math.abs(Math.round(pos.y));
+            });
         }
     },
     components:{
