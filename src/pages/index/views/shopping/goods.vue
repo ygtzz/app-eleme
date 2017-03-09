@@ -2,12 +2,12 @@
     <div class="c">
         <div class="left" ref="menuWrapper">
             <ul class="menu" >
-                <li @click="fMenuItemClick(item)" :class="{'active':activeMenuName==item.name}" class="item f12" v-for="(item,index) in goods">{{item.name}}</li>
+                <li @click="fMenuItemClick(item,index)" :class="{'active':activeMenuIndex==index}" class="item f12" v-for="(item,index) in goods">{{item.name}}</li>
             </ul>
         </div>
         <div class="right" ref="foodsWrapper">
             <ul>
-                <li v-for="item in goods">
+                <li v-for="item in goods" ref="foodList">
                     <div class="title f12"> {{item.name}}</div>
                     <c-food :foods="item.foods"></c-food>
                 </li>
@@ -31,16 +31,18 @@
 import data from 'index/mock/data';
 import food from './food.vue';
 import BScroll from 'better-scroll';
+import _ from 'lodash';
 
 export default {
     name:'c-goods',
     created(){
         this.goods = data.goods;
-        
+        this.fFoodsScrollThrottle = _.throttle(this.fFoodsScroll,50);
     },
     mounted(){
         this.$nextTick(() => {
             this.fInitScroll();
+            this.fCalcFoodHeight();
         });
     },
     props:{
@@ -52,26 +54,53 @@ export default {
     data(){
         return{
             goods:[],
-            activeMenuName:'',
             scrollY: 0,
             menuScroll:'',
-            foodsScroll:''
+            foodsScroll:'',
+            aFoodHeight:[]
+        }
+    },
+    computed:{
+        activeMenuIndex(){
+            let index = 0;
+            const aFoodHeight = this.aFoodHeight;
+            for(let i=0;i<this.aFoodHeight.length;i++){
+                if(aFoodHeight[i] <= this.scrollY && this.scrollY < aFoodHeight[i+1]){
+                    index = i;
+                }
+            }
+            return index;
         }
     },
     methods:{
-        fMenuItemClick(item){
-            this.activeMenuName = item.name;
+        fMenuItemClick(item,index){
+            this.activeMenuId = index;
+            const foodList = this.$refs.foodList;
+            const el = foodList[index];
+            this.foodsScroll.scrollToElement(el,300);
         },
         fInitScroll(){
-             this.meunScroll = new BScroll(this.$refs.menuWrapper, {
+            this.meunScroll = new BScroll(this.$refs.menuWrapper, {
                 click: true
             });
             this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
-                click: true
+                click: true,
+                probeType: 3
             });
             this.foodsScroll.on('scroll', (pos) => {
-                this.scrollY = Math.abs(Math.round(pos.y));
+                this.fFoodsScrollThrottle(pos);
             });
+        },
+        fFoodsScroll(pos){
+            this.scrollY = Math.abs(Math.round(pos.y));
+        },
+        fCalcFoodHeight(){
+            const aFood = this.$refs.foodList;
+            this.aFoodHeight.push(0);
+            Array.prototype.forEach.call(aFood,item => {
+                this.aFoodHeight.push(this.aFoodHeight[this.aFoodHeight.length-1] + item.offsetHeight);
+            });
+            this.aFoodHeight.push(Number.Max_VALUE);
         }
     },
     components:{
