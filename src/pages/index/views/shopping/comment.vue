@@ -10,14 +10,14 @@
                 <p class="score-wrap">
                     <span>服务态度</span>
                     <span class="mid">
-                        <c-star score="4"></c-star>
+                        <c-star :score="4"></c-star>
                     </span>
                     <span>4.1</span>
                 </p>
                 <p class="score-wrap">
                     <span>商品评分</span>
                     <span class="mid">
-                        <c-star score="4"></c-star>
+                        <c-star :score="4"></c-star>
                     </span>
                     <span>4.3</span>
                 </p>

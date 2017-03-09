@@ -70,9 +70,9 @@
         .discount{& *{vertical-align:middle}}
         .decrease{background-image:url(./header/decrease_1@2x.png);width:12px;height:12px;display:inline-block;}
         .title{font-size:dpr(16px);& *{vertical-align:middle}}
-        .other{display:flex;align-items:flex-end;}
-        .count{padding:0 8px;border-radius:15px;background:rgba(0,0,0,0.2);}
     }
+    .other{display:flex;align-items:flex-end;}
+    .count{padding:2px 8px;border-radius:22px;background:rgba(0,0,0,0.2);font-size:dpr(12px)}
     .bulletin{display:flex;align-items:center;padding:0 22px 0 12px;box-sizing:border-box;background:rgba(7,17,27,0.2);line-height:2;height:28px;}
     .bulletin-icon{width:22px;height:12px;margin-right:3px;background:url(./header/bulletin@2x.png);}    
     .bulletin-text{flex:1;font-size:dpr(12px)}
