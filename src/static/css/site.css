@@ -17,6 +17,14 @@ ul,li,p{margin:0;padding:0}
 .dot{background-color:#f43531;border-radius:50%;position:absolute;z-index:2;}
 .stage{position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;background-color:#F1F0F6;}
 .icon{display:inline-block;width:16px;height:16px;background-repeat:no-repeat;background-size:cover;}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+}
 /*slideup*/
 .slide-up-enter-active{transition:all .1s ease}
 .slide-up-leave-active{transition:all .1s ease}

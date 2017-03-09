@@ -1,22 +1,29 @@
 <template>
     <div class="c">
-        <div class="left" ref="menuWrapper">
-            <ul class="menu" >
-                <li @click="fMenuItemClick(item,index)" :class="{'active':activeMenuIndex==index}" class="item f12" v-for="(item,index) in goods">{{item.name}}</li>
-            </ul>
+        <div class="main">
+            <div class="left" ref="menuWrapper">
+                <ul class="menu" >
+                    <li @click="fMenuItemClick(item,index)" :class="{'active':activeMenuIndex==index}" class="item f12" v-for="(item,index) in goods">{{item.name}}</li>
+                </ul>
+            </div>
+            <div class="right" ref="foodsWrapper">
+                <ul>
+                    <li v-for="item in goods" ref="foodList">
+                        <div class="title f12"> {{item.name}}</div>
+                        <c-food :foods="item.foods"></c-food>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="right" ref="foodsWrapper">
-            <ul>
-                <li v-for="item in goods" ref="foodList">
-                    <div class="title f12"> {{item.name}}</div>
-                    <c-food :foods="item.foods"></c-food>
-                </li>
-            </ul>
-        </div>
+        <footer>
+            <c-shopcart></c-shopcart>        
+        </footer>
     </div>
 </template>
 <style lang="sass" scoped>
-    .c{display:flex;height:100%;}
+    .c{display:flex;flex-direction:column;height:100%;}
+    .main{display:flex;flex:1;}
+    footer{position:fixed;bottom:0;width:100%;}
     .left{width:80px;}
     .right{flex:1;
         height:100%;
@@ -32,6 +39,7 @@ import data from 'index/mock/data';
 import food from './food.vue';
 import BScroll from 'better-scroll';
 import _ from 'lodash';
+import shopcart from './shopcart.vue';
 
 export default {
     name:'c-goods',
@@ -104,7 +112,8 @@ export default {
         }
     },
     components:{
-        'c-food':food
+        'c-food':food,
+        'c-shopcart':shopcart
     }
 }
 </script>
