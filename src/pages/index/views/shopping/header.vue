@@ -87,6 +87,7 @@
         .text{padding:0 10px;}
         .line{height:0;border:1px solid rgba(255,255,255,0.2);flex:1}
         .star-wrap{width:200px;margin:0 auto;}
+        :global(.star-wrap .star .fa-star){font-size:dpr(20px)}
         .close{font-size:100px;}
         .decrease{background-image:url('./header/decrease_1@2x.png')}
         .discount{background-image:url('./header/discount_1@2x.png')}
