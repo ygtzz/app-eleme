@@ -2,7 +2,7 @@ html,body{
     height:100%;
     width:100%;
     overflow:hidden;
-    font-family:Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
+    font-family:'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
     font-size:dpr(14px);
     line-height:1.6;
 }

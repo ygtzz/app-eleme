@@ -16,6 +16,7 @@ export function datetime (date) {
 }
 
 export function fmtDate(_date, fmt) {
+    fmt = fmt || 'yyyy-MM-dd hh:mm';
     var date = new Date(_date)
     var o = {
         "M+": date.getMonth() + 1, //月份
