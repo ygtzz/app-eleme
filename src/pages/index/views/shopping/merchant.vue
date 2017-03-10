@@ -1,7 +1,7 @@
 <template>
     <div class="c">
         <div class="shop">
-            <div class="name">{{seller.name}}</div>
+            <div class="title">{{seller.name}}</div>
             <span class="desc">
                 <span class="star-wrap dib">
                     <c-star :score="seller.score"></c-star>
@@ -67,7 +67,10 @@
     </div>
 </template>
 <style lang="sass" scoped>
-    .c{height:100%;overflow-y:auto;}
+    .c{height:480px;overflow-y:auto;font-size:dpr(12px)}
+    .shop{padding:15px 20px;
+        .star-wrap{width:90px;}
+    }
 </style>
 <script>
 import star from './star.vue';
