@@ -50,7 +50,7 @@ export default {
         fMenuItemClick(index){
             this.sActiveId = index;
             const map = {0:'goods',1:'comment',2:'merchant'};
-            this.$router.push(map[index]);
+            this.$router.push({name:map[index]});
         }
     },
     components:{

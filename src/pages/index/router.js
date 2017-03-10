@@ -4,8 +4,8 @@ import comment from './views/shopping/comment.vue';
 import merchant from './views/shopping/merchant.vue';
 
 export default [
-    { path: '/', component: shopping },
-    { path: '', component: shopping, name:'shopping',
+    { path: '/', redirect:'/shopping' },
+    { path: '/shopping', component: shopping, name:'shopping',redirect:{name:'goods'},
       children:[
           {path:'goods',component:goods,name:'goods'},
           {path:'comment',component:comment,name:'comment'},
