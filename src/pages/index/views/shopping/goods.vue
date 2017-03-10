@@ -24,7 +24,7 @@
     .c{display:flex;flex-direction:column;}
     .main{display:flex;flex:1;}
     footer{position:fixed;bottom:0;width:100%;}
-    .left{width:80px;}
+    .left{width:80px;height:438px;overflow-y:hidden;}
     .right{flex:1;
         height:470px;
         overflow-y:hidden;
