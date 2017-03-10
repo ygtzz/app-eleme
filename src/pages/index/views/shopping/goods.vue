@@ -21,12 +21,12 @@
     </div>
 </template>
 <style lang="sass" scoped>
-    .c{display:flex;flex-direction:column;height:100%;}
+    .c{display:flex;flex-direction:column;}
     .main{display:flex;flex:1;}
     footer{position:fixed;bottom:0;width:100%;}
     .left{width:80px;}
     .right{flex:1;
-        height:100%;
+        height:470px;
         overflow-y:hidden;
     }
     .item{padding:15px;background-color:#F3F5F7;
