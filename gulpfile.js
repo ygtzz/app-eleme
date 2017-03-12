@@ -10,7 +10,8 @@ plugins = {
     inject: require('gulp-inject')
 };
 
-
+//this is a test comment
+//scan all tasks in tasks folder
 gulpTaskList.forEach(function(taskfile) {
     require('./build/tasks/' + taskfile)(gulp, plugins, config);
 });

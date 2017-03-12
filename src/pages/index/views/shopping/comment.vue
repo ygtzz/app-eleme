@@ -79,7 +79,6 @@
 </template>
 <style lang="sass" scoped>
     .c{font-size:dpr(12px);height:480px;overflow:hidden;}
-    .gray{color:#B1B5B9}
     .rate{display:flex;
         padding:15px 10px;
         .left{border-right:1px solid #b1b5b9;padding-right:10px;}
