@@ -10,13 +10,13 @@
                 <ul>
                     <li v-for="item in goods" ref="foodList">
                         <div class="title f12"> {{item.name}}</div>
-                        <c-food :foods="item.foods"></c-food>
+                        <c-food @add="fAddFood" :foods="item.foods"></c-food>
                     </li>
                 </ul>
             </div>
         </div>
         <footer>
-            <c-shopcart></c-shopcart>        
+            <c-shopcart ref="shopcart"></c-shopcart>        
         </footer>
     </div>
 </template>
@@ -109,6 +109,15 @@ export default {
                 this.aFoodHeight.push(this.aFoodHeight[this.aFoodHeight.length-1] + item.offsetHeight);
             });
             this.aFoodHeight.push(Number.Max_VALUE);
+        },
+        fAddFood(target) {
+            this._drop(target);
+        },
+        _drop(target) {
+            // 体验优化,异步执行下落动画
+            this.$nextTick(() => {
+                this.$refs.shopcart.drop(target);
+            });
         }
     },
     components:{

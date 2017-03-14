@@ -12,7 +12,7 @@
                     <p class="price">¥{{item.price}}</p>
                 </div>
                 <div class="other">
-                    <span class="add dib f18">+</span>
+                    <c-addfood @add="fAddfood"></c-addfood>
                 </div>
             </div>
         </li>
@@ -33,10 +33,10 @@
     .sale{color:#93999F}
     .price{color:#F34949}
     .other{display:flex;flex-direction:column;justify-content:flex-end}
-    .add{background:#00A0DC;color:#fff;border-radius:50%;width:20px;height:20px;line-height:1;text-align:center;}
 </style>
 <script>
 import data from 'index/mock/data';
+import addfood from './addfood.vue';
 
 export default {
     name:'c-food',
@@ -54,7 +54,13 @@ export default {
     methods:{
         fMenuItemClick(item){
             this.activeMenuName = item.name;
+        },
+        fAddfood(target){
+            this.$emit('add',target);
         }
+    },
+    components:{
+        'c-addfood':addfood
     }
 }
 </script>
