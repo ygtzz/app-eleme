@@ -8,7 +8,7 @@
             </div>
             <div class="right" ref="foodsWrapper">
                 <ul>
-                    <li v-for="item in goods" ref="foodList">
+                    <li v-for="item in goods" ref="foodList" class="food-item">
                         <div class="title f12"> {{item.name}}</div>
                         <c-food @add="fAddFood" :foods="item.foods"></c-food>
                     </li>
@@ -24,7 +24,7 @@
     .c{display:flex;flex-direction:column;}
     .main{display:flex;flex:1;}
     footer{position:fixed;bottom:0;width:100%;}
-    .left{width:80px;height:438px;overflow-y:hidden;}
+    .left{width:80px;height:438px;overflow-y:hidden;flex:0 0 80px;}
     .right{flex:1;
         height:470px;
         overflow-y:hidden;
@@ -32,7 +32,7 @@
     .item{padding:15px;background-color:#F3F5F7;
         &.active{background-color:#fff}
     }
-    .title{color:#93999f;line-height:2.1;background:#F3F5F7;padding-left:14px;border-left:2px solid #D9DDE1;}
+    .title{color:#93999f;height:26px;line-height:26px;;background:#F3F5F7;padding-left:14px;border-left:2px solid #D9DDE1;}
 </style>
 <script>
 import data from 'index/mock/data';

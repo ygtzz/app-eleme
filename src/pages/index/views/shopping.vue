@@ -18,7 +18,7 @@
 <style lang="sass" scoped>
     .shopping{display:flex;flex-direction:column;height:100%;overflow:hidden;}
     .body{flex:1;}
-    .menu{display:flex;align-items:center;border-bottom:1px solid #ccc;}
+    .menu{display:flex;align-items:center;border-bottom:1px solid #ccc;height:40px;}
     .item{flex:1;text-align:center;padding:8px 0;
         &.active{color:#F45858;}
     }
